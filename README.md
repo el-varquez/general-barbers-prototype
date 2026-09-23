@@ -14,16 +14,17 @@ The main walkthrough includes:
 - front-desk settlement
 - owner and staff dashboard screens
 
-## Deploy to Vercel
+## Deploy to GitHub Pages
 
-Import this repository into Vercel and keep the default project settings:
+Push the repository to GitHub, then open the repository's **Settings → Pages**. Under **Build and deployment**, select **GitHub Actions** as the source.
 
-- Framework preset: **Other**
-- Build command: leave empty
-- Output directory: leave empty
-- Root directory: repository root
+The included workflow publishes `general-barbers/` whenever a commit is pushed to `main`. After the first successful deployment, the prototype will be available at:
 
-`vercel.json` redirects the deployment root to the presentation entry point at `general-barbers/`.
+```text
+https://<github-username>.github.io/<repository-name>/
+```
+
+You can also run the **Deploy General Barbers to GitHub Pages** workflow manually from the repository's Actions tab.
 
 ## Regenerate the prototype
 
@@ -38,4 +39,3 @@ The build script contains local Meridian and image-cache paths. Verify those pat
 ## Manual checks
 
 After visual or interaction changes, verify the booking flow, QR check-in, barber start/done actions, completion, and role/page navigation. Check both the 390px mobile cards and 1440px desktop cards.
-
