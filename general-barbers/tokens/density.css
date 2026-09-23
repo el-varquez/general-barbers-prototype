@@ -1,0 +1,7 @@
+/* Density — the phone is thumb-sized, the dashboard is tablet-sized. Both are fixed; there is no compact mode. */
+:root {
+  --control-h-sm:32px; --control-h:38px; --control-h-lg:48px;
+  --row-h:44px; --row-h-dense:38px; --header-row-h:34px;
+  --cell-pad-x:10px; --input-pad-x:12px;
+  --touch-target:44px;
+}

@@ -1,0 +1,31 @@
+<!-- @dsCard group="Patterns" viewport="900x330" subtitle="The vertical stepper under the QR: the same five rows, three moments in a visit" name="Live status" -->
+<!doctype html><html data-theme="dark"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;background:var(--app-bg)}
+.panel{background:var(--app-card);border:1px solid var(--app-border);border-radius:var(--r-lg);padding:14px 16px 4px}
+.panel h4{margin:0 0 12px;font-size:var(--fs-sm);font-weight:600;color:var(--app-text-md)}
+</style></head><body>
+<div class="panel"><h4>Booked · before arrival</h4>
+  <ul class="gb-stepper">
+    <li class="now"><span class="k"></span><div>Booked<small>Downpayment of ₱100 received</small></div></li>
+    <li><span class="k"></span><div>Checked in<small>Scan at the front desk when you arrive</small></div></li>
+    <li><span class="k"></span><div>In the chair<small>Jay is cutting</small></div></li>
+    <li><span class="k"></span><div>Cut done<small>Settle ₱100 at the front desk</small></div></li>
+    <li><span class="k"></span><div>Completed<small>Thanks for visiting</small></div></li>
+  </ul></div>
+<div class="panel"><h4>In queue · position and wait are live</h4>
+  <ul class="gb-stepper">
+    <li class="past"><span class="k">✓</span><div>Booked<small>Downpayment of ₱100 received</small></div></li>
+    <li class="now"><span class="k"></span><div>Checked in<small>Position 2 · about 25 min</small></div></li>
+    <li><span class="k"></span><div>In the chair<small>Jay is cutting</small></div></li>
+    <li><span class="k"></span><div>Cut done<small>Settle ₱100 at the front desk</small></div></li>
+    <li><span class="k"></span><div>Completed<small>Thanks for visiting</small></div></li>
+  </ul></div>
+<div class="panel"><h4>Cut done · what to pay, where</h4>
+  <ul class="gb-stepper">
+    <li class="past"><span class="k">✓</span><div>Booked<small>Downpayment of ₱100 received</small></div></li>
+    <li class="past"><span class="k">✓</span><div>Checked in<small>Arrived 1:52 PM</small></div></li>
+    <li class="past"><span class="k">✓</span><div>In the chair<small>Started 2:04 PM</small></div></li>
+    <li class="now"><span class="k"></span><div>Cut done<small>Settle ₱100 at the front desk</small></div></li>
+    <li><span class="k"></span><div>Completed<small>Thanks for visiting</small></div></li>
+  </ul></div>
+</body></html>

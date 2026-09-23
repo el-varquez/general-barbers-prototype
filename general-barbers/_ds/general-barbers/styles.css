@@ -1,0 +1,14 @@
+/* Bound design-system entry for the presentation. Imports the one stylesheet and exposes the deck's token names on top of it. */
+@import "../../styles.css";
+:root {
+  --color-bg: var(--surface-page);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--a-600);
+  --color-accent-bright: var(--a-400);
+  --color-divider: var(--divider);
+  --font-heading: var(--font-display);
+  --font-body: var(--font-ui);
+  --radius-sm: var(--r-sm); --radius-md: var(--r-md); --radius-lg: var(--r-lg);
+}

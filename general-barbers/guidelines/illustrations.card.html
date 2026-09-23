@@ -1,0 +1,35 @@
+<!-- @dsCard group="Brand" viewport="1100x820" subtitle="The flat vector set drawn in the badge's own style, standing in until the shop supplies photos" name="Illustrations" -->
+<!doctype html><html data-theme="dark"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:18px;display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;background:var(--app-bg)}
+.box{background:var(--app-card);border:1px solid var(--app-border);border-radius:var(--r-lg);padding:12px}
+.box h4{font-size:var(--fs-xs);margin:0 0 8px;color:var(--app-text-dm);font-weight:500;text-transform:uppercase;letter-spacing:.4px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+svg{display:block}
+.b210{width:210px;height:92px;border-radius:12px;overflow:hidden}.b210 svg{width:100%;height:100%}
+.hero{width:346px;height:152px;border-radius:17px;overflow:hidden;position:relative}.hero svg{width:100%;height:100%}
+.av{width:54px;height:54px}.av svg{width:100%;height:100%}
+.av3{width:96px;height:96px}.av3 svg{width:100%;height:100%}
+.pf{display:grid;grid-template-columns:repeat(6,84px);gap:6px}.pf div{height:84px;border-radius:12px;overflow:hidden}.pf svg{width:100%;height:100%}
+.qr{width:150px;height:150px;background:#fff;border-radius:12px;padding:8px;box-sizing:border-box}.qr svg{width:100%;height:100%}
+.vf{width:220px;height:220px;border-radius:16px;overflow:hidden}.vf svg{width:100%;height:100%}
+.tk{width:140px}.tk svg{width:100%}
+.cap{font-size:var(--fs-xs);color:var(--app-text-dm);margin-top:6px;max-width:340px;line-height:1.45}
+</style></head><body>
+<div class="box"><h4>Storefronts · one per branch</h4><div class="row"><div class="b210" id="b1"></div><div class="b210" id="b2"></div><div class="b210" id="b3"></div></div><div class="cap">JP Laurel is the corner shop with two storeys, Polomolok the roadside single storey with a palm, Calumpang the new one with bunting. Same SVG at 210×92 and 346×112; the bottom edge anchors so the street stays in frame.</div></div>
+<div class="box"><h4>Hero · featured service</h4><div class="hero" id="hero"></div><div class="cap">The badge stripes at the top, a chair on the right, the text sits bottom-left on a darkening gradient.</div></div>
+<div class="box"><h4>People · barbers, receptionist, customer</h4><div class="row" id="av54"></div><div class="row" id="av96" style="margin-top:10px"></div><div class="cap">Jay, Mark, Ken, Rico, Rhea and El. Rounded-square at 54 and 36px in lists, circular at 96 to 120px on profiles. Initials on a green tile stand in for anyone without a portrait.</div></div>
+<div class="box"><h4>Portfolio · haircut silhouettes</h4><div class="pf" id="pf"></div><div class="cap">Six cuts as white hair on a dark bust: skin fade, low taper, undercut, buzz cut, pompadour, textured crop. They fill a barber's portfolio until real photos are uploaded.</div></div>
+<div class="box"><h4>Pseudo-QR, viewfinder, ticket</h4><div class="row"><div class="qr" id="qr"></div><div class="vf" id="vf"></div><div class="tk" id="tk"></div></div><div class="cap">The QR is a deterministic pattern seeded by the booking reference, with the badge in the middle. The viewfinder's scan line moves; the ticket is the empty state before a scan.</div></div>
+<script src="../components/gb-art.js"></script>
+<script>
+const A=GB_ART;
+b1.innerHTML=A.branch(1);b2.innerHTML=A.branch(2);b3.innerHTML=A.branch(3);
+hero.innerHTML=A.hero();
+const P=['jay','mark','ken','rico','rhea','el'];
+av54.innerHTML=P.map(p=>`<div class="av">${A.avatar(p,{round:28})}</div>`).join('');
+av96.innerHTML=P.map(p=>`<div class="av3">${A.avatar(p)}</div>`).join('');
+pf.innerHTML=[0,1,2,3,4,5].map(i=>`<div>${A.style(i)}</div>`).join('');
+qr.innerHTML=A.qr('GB-0048');vf.innerHTML=A.viewfinder();tk.innerHTML=A.ticket();
+</script>
+<style>@keyframes gbscan{0%{transform:translateY(0)}50%{transform:translateY(178px)}100%{transform:translateY(0)}}.gb-scanline{animation:gbscan 2.6s ease-in-out infinite}</style>
+</body></html>

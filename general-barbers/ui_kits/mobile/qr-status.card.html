@@ -1,0 +1,27 @@
+<!-- @dsCard group="Mobile — Customer" viewport="390x800" subtitle="Booked: show the code at the front desk; live status underneath" name="QR code and live status" -->
+<!doctype html><html data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>QR code and live status — General Barbers</title>
+<meta name="theme-color" content="#0b140f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="General Barbers">
+<link rel="manifest" href="../../manifest.json">
+<link rel="apple-touch-icon" href="../../uploads/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../../uploads/icon-192.png">
+<link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="_app.css"></head>
+<body data-preset="qr">
+<div class="phone">
+  <div class="screen" id="screen"></div>
+  <div id="push"></div>
+  <div id="navbar"></div>
+  <button class="mfab" onclick="toggleSheet()" title="Prototype controls">|||</button>
+  <div class="msheet" id="msheet"><div class="msheet-bg" onclick="toggleSheet(false)"></div><div class="msheet-body"><div class="handle"></div><div id="msheet-content"></div></div></div>
+</div>
+<aside class="dmb-aside">
+  <div class="ctl"><div class="modeseg" id="modeseg"></div><div class="pfoot" id="foot"></div></div>
+  <div class="walk" id="walk"></div>
+</aside>
+<script src="../../components/gb-art.js"></script>
+<script src="_app.js"></script>
+<script src="../../demo.js"></script>
+</body></html>

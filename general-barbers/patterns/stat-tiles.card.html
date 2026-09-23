@@ -1,0 +1,11 @@
+<!-- @dsCard group="Patterns" viewport="900x180" subtitle="Four tiles at the top of a dashboard page: label, value, one line of change" name="Stat tiles" -->
+<!doctype html><html data-theme="dark"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:14px;background:var(--app-bg);display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gb-stat{background:var(--app-card);border-color:var(--app-border);color:var(--app-text)}
+.gb-stat .ic{float:right;font-size:19px;opacity:.85}
+</style></head><body>
+<div class="gb-stat"><span class="ic">📅</span><div class="lbl">Today's bookings</div><div class="val">8</div><div class="dlt">+2 vs yesterday</div></div>
+<div class="gb-stat"><span class="ic">💰</span><div class="lbl">Revenue today</div><div class="val">₱1,815</div><div class="dlt">₱915 collected</div></div>
+<div class="gb-stat"><span class="ic">⏳</span><div class="lbl">In queue</div><div class="val">1</div><div class="dlt">~15 min est. wait</div></div>
+<div class="gb-stat"><span class="ic">✓</span><div class="lbl">Show-up rate</div><div class="val">96%</div><div class="dlt">1 no-show this week</div></div>
+</body></html>

@@ -1,0 +1,28 @@
+<!-- @dsCard group="Patterns" viewport="900x360" subtitle="One card per chair on the dashboard: who is in it, who is next, and the by-hand actions that send the same notifications" name="Queue per chair" -->
+<!doctype html><html data-theme="dark"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:14px;background:var(--app-bg);display:flex;flex-direction:column;gap:12px}
+.chair{background:var(--app-card);border:1px solid var(--app-border);border-radius:var(--r-lg);padding:16px 18px}
+.head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.head h3{margin:0;font-size:var(--fs-lg)}
+.head .sub{font-size:var(--fs-sm);margin-top:2px}
+.av{width:36px;height:36px}.av svg{width:100%;height:100%;display:block}
+.q{display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:11px;margin-bottom:7px}
+.qn{width:26px;height:26px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;color:#fff}
+.q b{font-size:13.5px;display:block}
+.q .m{font-size:11.5px;color:var(--app-text-dm)}
+.acts{display:flex;gap:6px;margin-left:8px}
+</style></head><body>
+<div class="chair">
+  <div class="head">
+    <div style="display:flex;align-items:center;gap:11px"><div class="av" id="av"></div><div><h3>Jay Reyes <span style="font-weight:400;font-size:12px;color:var(--app-text-dm)">· chair 1</span></h3><div class="sub" style="color:var(--status-chair)">Cutting James Robles since 10:41 AM · about 5 min left</div></div></div>
+    <button class="gb-btn gb-btn-primary">Mark James as done</button>
+  </div>
+  <div class="q" style="background:rgba(245,158,11,.08)"><div class="qn" style="background:var(--status-chair)">✂</div><div style="flex:1"><b>James Robles</b><span class="m">Low taper fade · booked 10:00 AM · started 10:41 AM</span></div><span class="gb-pill t-chair">In the chair</span></div>
+  <div class="q" style="background:rgba(77,181,106,.06)"><div class="qn" style="background:var(--status-queued)">1</div><div style="flex:1"><b>Luis Cabrera <span style="font-weight:400;font-size:11px;color:var(--app-text-dm)">· notified 11:18 AM</span></b><span class="m">Skin fade · 1:00 PM · arrived 11:12 AM</span></div><span class="gb-pill t-queued">In queue</span>
+    <div class="acts"><button class="gb-btn gb-btn-sm gb-btn-primary">Call to chair</button><button class="gb-btn gb-btn-sm gb-btn-secondary">Start cut</button><button class="gb-btn gb-btn-sm gb-btn-secondary">No-show</button></div></div>
+  <div class="q" style="background:rgba(255,255,255,.025)"><div class="qn" style="background:rgba(255,255,255,.14)">2</div><div style="flex:1"><b>Elmer Varquez</b><span class="m">Skin fade · 2:00 PM · not checked in yet</span></div><span class="gb-pill t-booked">Booked</span>
+    <div class="acts"><button class="gb-btn gb-btn-sm gb-btn-secondary">Call</button><button class="gb-btn gb-btn-sm gb-btn-secondary">Check in</button><button class="gb-btn gb-btn-sm gb-btn-secondary">No-show</button></div></div>
+</div>
+<div style="font-size:var(--fs-sm);color:var(--app-text-md);line-height:1.55">"Call" sends the message for that customer's situation: <b>go to the chair</b> if they're checked in, <b>check in first</b> if they're not. Marking a cut done sends it to the next person automatically, so the buttons only exist for the day a phone or the QR is down.</div>
+<script src="../components/gb-art.js"></script><script>document.getElementById('av').innerHTML=GB_ART.avatar('jay',{round:30})</script>
+</body></html>

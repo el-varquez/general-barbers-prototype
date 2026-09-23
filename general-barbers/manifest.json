@@ -1,0 +1,15 @@
+{
+  "name": "General Barbers",
+  "short_name": "General Barbers",
+  "description": "Book a cut, show one QR code, track your visit live.",
+  "start_url": "ui_kits/mobile/launch.card.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b140f",
+  "theme_color": "#0b140f",
+  "icons": [
+    { "src": "uploads/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "uploads/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

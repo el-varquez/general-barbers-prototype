@@ -1,0 +1,40 @@
+<!-- @dsCard group="Foundations" viewport="900x520" subtitle="Five roles; customers are assigned automatically at sign-up, staff only exist once the owner adds them" name="Roles and permissions" -->
+<!doctype html><html data-theme="light"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:14px;display:flex;flex-direction:column;gap:12px}
+.m{width:100%;border-collapse:collapse;font-size:var(--fs-sm)}
+.m th{text-align:left;padding:0 8px 10px;font-size:var(--fs-xs);color:var(--text-faint);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border)}
+.m th.c,.m td.c{text-align:center}
+.m td{padding:8px;border-bottom:1px solid var(--divider)}
+.tick{display:inline-flex;width:22px;height:22px;border-radius:7px;align-items:center;justify-content:center;font-size:12px;background:var(--accent-soft);color:var(--accent-soft-text)}
+.no{display:inline-flex;width:22px;height:22px;border-radius:7px;border:1px solid var(--divider)}
+.roles{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.role{border:1px solid var(--border);border-radius:var(--r-md);padding:10px 12px;background:var(--surface)}
+.role b{display:block;font-size:var(--fs-sm)}
+.role span{font-size:var(--fs-xs);color:var(--text-muted);line-height:1.4}
+</style></head><body>
+<div class="roles">
+  <div class="role"><b style="color:#9a6206">Owner</b><span>Everything, across all branches</span></div>
+  <div class="role"><b style="color:#1d4e89">Manager</b><span>Runs one branch day to day</span></div>
+  <div class="role"><b style="color:#1e5a30">Front desk</b><span>Scans, queue and bookings at the counter</span></div>
+  <div class="role"><b style="color:#8a5a08">Barber</b><span>Barber app only: own chair, scan, start and done</span></div>
+  <div class="role"><b style="color:var(--text-muted)">Customer</b><span>Customer app only. Given automatically at sign-up</span></div>
+</div>
+<table class="m">
+  <thead><tr><th>Permission</th><th class="c">Owner</th><th class="c">Manager</th><th class="c">Front desk</th><th class="c">Barber</th><th class="c">Customer</th></tr></thead>
+  <tbody>
+    <tr><td>Dashboard overview</td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td></tr>
+    <tr><td>Front desk scan: check in and collect balance</td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td></tr>
+    <tr><td>Live queue: call, check in, start, done, no-show</td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td></tr>
+    <tr><td>Bookings: view and reschedule</td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td></tr>
+    <tr><td>Barbers: schedules and performance</td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td></tr>
+    <tr><td>Services and pricing</td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td></tr>
+    <tr><td>Customer database</td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td></tr>
+    <tr><td>Export customer list</td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td></tr>
+    <tr><td>Sales, payments and reports</td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td></tr>
+    <tr><td>Users and roles</td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td></tr>
+    <tr><td>Barber app: own chair, scan, start and done</td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td><td class="c"><i class="tick">✓</i></td><td class="c"><i class="no"></i></td></tr>
+    <tr><td>Customer app: book, pay, review</td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td><td class="c"><i class="no"></i></td><td class="c"><i class="tick">✓</i></td></tr>
+  </tbody>
+</table>
+<div style="font-size:var(--fs-sm);color:var(--text-muted);line-height:1.55">How staff sign-in works: the owner adds the account with the email or number the person signs in with. That person then signs in like everyone else, with Google, Facebook or a phone code. A matching account opens the barber app or the dashboard; any other sign-in becomes a customer. The live matrix on <a href="../ui_kits/desktop/users-roles.card.html">Users and roles</a> is editable for Manager and Front desk.</div>
+</body></html>

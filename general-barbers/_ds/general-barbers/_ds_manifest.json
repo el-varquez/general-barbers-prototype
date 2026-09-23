@@ -1,0 +1,17 @@
+{"namespace":"GeneralBarbers_gb","components":[],"startingPoints":[],"cards":[
+{"path":"index.html","group":"Overview","viewport":"1100x900","subtitle":"Client-facing demo cover: the flow, the twenty-beat walkthrough, and every other screen","name":"Demo cover"},
+{"path":"guidelines/identity.card.html","group":"Brand","viewport":"760x300","subtitle":"The badge is the identity","name":"Identity"},
+{"path":"guidelines/color.card.html","group":"Brand","viewport":"760x420","subtitle":"One green, two ramps","name":"Color"},
+{"path":"guidelines/type.card.html","group":"Brand","viewport":"760x360","subtitle":"Oswald over the system face","name":"Type"},
+{"path":"guidelines/illustrations.card.html","group":"Brand","viewport":"1100x820","subtitle":"The flat vector set","name":"Illustrations"},
+{"path":"guidelines/status.card.html","group":"Foundations","viewport":"900x380","subtitle":"Five booking statuses and who moves them","name":"Booking statuses"},
+{"path":"guidelines/roles.card.html","group":"Foundations","viewport":"900x520","subtitle":"Roles and permissions","name":"Roles and permissions"},
+{"path":"guidelines/booking-flow.card.html","group":"Foundations","viewport":"1560x1700","subtitle":"The booking flow chart","name":"Booking flow"},
+{"path":"patterns/live-status.card.html","group":"Patterns","viewport":"900x330","subtitle":"The vertical stepper under the QR","name":"Live status"},
+{"path":"patterns/queue-chair.card.html","group":"Patterns","viewport":"900x360","subtitle":"One card per chair","name":"Queue per chair"},
+{"path":"patterns/qr-card.card.html","group":"Patterns","viewport":"420x420","subtitle":"The code the shop scans three times","name":"QR card"},
+{"path":"patterns/push-banner.card.html","group":"Patterns","viewport":"760x300","subtitle":"The three pushes and the callout","name":"Push banner"},
+{"path":"patterns/stat-tiles.card.html","group":"Patterns","viewport":"900x180","subtitle":"Dashboard stat tiles","name":"Stat tiles"},
+{"path":"components/primitives.card.html","group":"Components","viewport":"900x560","subtitle":"The gb-* class layer","name":"Primitives"},
+{"path":"presentation/Client Presentation.dc.html","group":"Presentation","viewport":"1280x720","subtitle":"16-slide client story","name":"Client presentation"}
+]}

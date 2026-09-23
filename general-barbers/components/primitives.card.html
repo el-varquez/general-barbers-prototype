@@ -1,0 +1,34 @@
+<!-- @dsCard group="Components" viewport="900x560" subtitle="The gb-* class layer: buttons, status pills, chips, fields, a table and the toast, in both themes" name="Primitives" -->
+<!doctype html><html data-theme="light"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.col{border:1px solid var(--border);border-radius:var(--r-lg);background:var(--surface);padding:16px;display:flex;flex-direction:column;gap:14px}
+.col[data-theme="dark"]{background:var(--app-card);border-color:var(--app-border);color:var(--app-text)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.lbl{font-size:var(--fs-xs);color:var(--text-faint)}
+</style></head><body>
+<div class="col">
+  <div class="lbl">Buttons</div>
+  <div class="row"><button class="gb-btn gb-btn-primary">Start cut</button><button class="gb-btn gb-btn-secondary">Reschedule</button><button class="gb-btn gb-btn-ghost">Maybe later</button><button class="gb-btn gb-btn-primary gb-btn-sm">Call to chair</button><button class="gb-btn gb-btn-primary" disabled>Post review</button></div>
+  <div class="lbl">Status pills</div>
+  <div class="row"><span class="gb-pill t-booked">Booked</span><span class="gb-pill t-queued">In queue</span><span class="gb-pill t-chair">In the chair</span><span class="gb-pill t-done">Cut done</span><span class="gb-pill t-complete">Completed</span><span class="gb-pill t-noshow">No-show</span><span class="gb-pill t-info"><span class="dot"></span>Prototype</span></div>
+  <div class="lbl">Chips and tags</div>
+  <div class="row"><button class="gb-chip on">Clean fade</button><button class="gb-chip on">On time</button><button class="gb-chip">Friendly</button><button class="gb-chip">Good advice</button><span class="gb-tag">Popular</span><span class="gb-tag">Pro</span></div>
+  <div class="lbl">Fields</div>
+  <div class="gb-field"><label>Signs in with (email or mobile number)</label><input class="gb-input" value="jayreyes.cuts@gmail.com"></div>
+  <div class="gb-field"><label>Branch</label><select class="gb-select"><option>JP Laurel</option><option>Polomolok</option><option>Calumpang</option></select></div>
+</div>
+<div class="col" data-theme="dark">
+  <div class="lbl" style="color:var(--app-text-dm)">The same layer on the app surface</div>
+  <div class="row"><button class="gb-btn gb-btn-primary">Collect ₱100 &amp; complete</button><button class="gb-btn gb-btn-secondary">Cancel</button><button class="gb-btn gb-btn-secondary gb-btn-sm">No-show</button></div>
+  <div class="row"><span class="gb-pill t-booked">Booked</span><span class="gb-pill t-queued">In queue</span><span class="gb-pill t-chair">In the chair</span><span class="gb-pill t-done">Cut done</span><span class="gb-pill t-complete">Completed</span><span class="gb-pill t-noshow">No-show</span></div>
+  <table class="gb-table">
+    <thead><tr><th>Booking</th><th>Customer</th><th>Time</th><th>Status</th><th style="text-align:right">Paid / Total</th></tr></thead>
+    <tbody>
+      <tr><td class="mono" style="color:var(--a-400);font-weight:600">GB-0043</td><td>James Robles</td><td>10:00 AM</td><td><span class="gb-pill t-chair">In the chair</span></td><td class="amount" style="text-align:right"><b style="color:var(--a-400)">₱100</b> <span style="color:var(--app-text-dm)">/ ₱200</span></td></tr>
+      <tr><td class="mono" style="color:var(--a-400);font-weight:600">GB-0044</td><td>Andrei Lim</td><td>10:30 AM</td><td><span class="gb-pill t-done">Cut done</span></td><td class="amount" style="text-align:right"><b style="color:var(--a-400)">₱90</b> <span style="color:var(--app-text-dm)">/ ₱180</span></td></tr>
+      <tr><td class="mono" style="color:var(--a-400);font-weight:600">GB-0048</td><td>Elmer Varquez</td><td>2:00 PM</td><td><span class="gb-pill t-booked">Booked</span></td><td class="amount" style="text-align:right"><b style="color:var(--a-400)">₱100</b> <span style="color:var(--app-text-dm)">/ ₱200</span></td></tr>
+    </tbody>
+  </table>
+  <div class="gb-toast on" style="position:static;transform:none;display:inline-block;align-self:center">Invite sent. Jomar gets the Barber role the moment they sign in with 0995 ••• 4410.</div>
+</div>
+</body></html>

@@ -1,0 +1,21 @@
+<!-- @dsCard group="Brand" viewport="760x300" subtitle="The badge is the identity: white on the shop's green canvas, and white on the app's dark surface" name="Identity" -->
+<!doctype html><html data-theme="light"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:14px;display:flex;flex-direction:column;gap:12px}
+.row{display:flex;gap:12px}
+.spec{flex:1;border:1px solid var(--border);border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;height:150px;position:relative;overflow:hidden}
+.spec .cap{position:absolute;left:10px;bottom:8px;font-size:var(--fs-xs);color:var(--text-faint)}
+.spec.green .cap,.spec.dark .cap{color:rgba(255,255,255,.6)}
+.spec.dark{background:var(--app-bg)}
+.marks{display:flex;gap:14px;align-items:center}
+</style></head><body>
+<div class="row">
+  <div class="spec gb-canvas green"><i class="gb-logo" style="width:150px"></i><span class="cap">On the canvas: --a-600 under --tex, the logo as supplied</span></div>
+  <div class="spec dark"><i class="gb-logo" style="width:130px;filter:drop-shadow(0 10px 26px rgba(0,0,0,.45))"></i><span class="cap">On the app surface: --app-bg, with a soft drop shadow</span></div>
+</div>
+<div class="marks">
+  <div class="gb-logotile" style="width:56px;height:56px"><i class="gb-logo"></i></div>
+  <div class="gb-logotile" style="width:40px;height:40px"><i class="gb-logo"></i></div>
+  <div class="gb-logotile" style="width:28px;height:28px"><i class="gb-logo"></i></div>
+  <div style="font-size:var(--fs-sm);color:var(--text-muted);line-height:1.5;max-width:46ch">The tile is the app icon, the sidebar mark and the push-banner avatar. The badge already spells the name, so a separate wordmark is only set in Oswald when the badge is too small to read: <span style="font-family:var(--font-display);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--text)">General Barbers</span>.</div>
+</div>
+</body></html>

@@ -1,0 +1,12 @@
+/* Structural type scale — locked. Families come from the brand file (--font-ui / --font-display / --font-mono).
+   The app runs a touch larger than a data product: 13px base, 14–15px for tappable rows. */
+:root {
+  --fs-xs:11px; --fs-sm:12px; --fs-base:13px; --fs-md:14px; --fs-lg:16px;
+  --fs-xl:20px; --fs-2xl:24px; --fs-3xl:32px; --fs-display:42px;
+  --lh-tight:1.2; --lh-base:1.5;
+  --fw-normal:400; --fw-medium:500; --fw-semibold:600; --fw-bold:700;
+  --tracking-eyebrow:.07em; --tracking-display:.3px;
+  /* locale formatting tokens — consumed by formatters, not CSS */
+  --currency-symbol:"\20B1"; --currency-code:"PHP"; --decimal-places:0;
+  --date-format:"MMM D, YYYY"; --time-format:"h:mm A";
+}

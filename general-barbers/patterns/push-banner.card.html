@@ -1,0 +1,22 @@
+<!-- @dsCard group="Patterns" viewport="760x300" subtitle="Three pushes a customer gets: you're up next, your chair is ready, rate your visit; and the in-screen callout that mirrors them" name="Push banner" -->
+<!doctype html><html data-theme="dark"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:18px;background:var(--app-bg);display:flex;flex-direction:column;gap:12px;color:var(--app-text)}
+.push{background:rgba(20,42,27,.96);border:1px solid var(--app-border-hi);border-radius:16px;padding:11px 13px;display:flex;gap:11px;align-items:center;box-shadow:0 12px 30px rgba(0,0,0,.45);max-width:360px}
+.push .gb-logotile{width:36px;height:36px}
+.push b{display:block;font-size:12.5px}
+.push span{font-size:11.5px;color:var(--app-text-md);line-height:1.35}
+.push i{margin-left:auto;font-size:10px;color:var(--app-text-dm);font-style:normal;align-self:flex-start}
+.callout{max-width:360px;background:rgba(77,181,106,.1);border:1px solid var(--a-400);border-radius:16px;padding:12px 14px;display:flex;gap:10px;align-items:center;font-size:13px;line-height:1.45}
+.callout span{color:var(--app-text-md)}
+.row{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
+</style></head><body>
+<div class="row">
+  <div class="push"><div class="gb-logotile"><i class="gb-logo"></i></div><div><b>You're up next</b><span>You're up next. Check in at the front desk first, then go to Jay's chair.</span></div><i>now</i></div>
+  <div class="push"><div class="gb-logotile"><i class="gb-logo"></i></div><div><b>Your chair is ready</b><span>Your chair is ready. Go to Jay's chair now.</span></div><i>now</i></div>
+</div>
+<div class="row">
+  <div class="push"><div class="gb-logotile"><i class="gb-logo"></i></div><div><b>Your cut with Jay is complete</b><span>Thanks for visiting. Tap to rate your visit.</span></div><i>now</i></div>
+  <div class="callout"><span style="font-size:20px">🔔</span><div><b>Your chair is ready</b><br><span>Your chair is ready. Go to Jay's chair now.</span></div></div>
+</div>
+<div style="font-size:var(--fs-sm);color:var(--app-text-md);line-height:1.55;max-width:70ch">The banner slides in at the top of whatever screen the customer is on and clears when tapped. On the QR screen the same message shows as a callout above the live status instead, so it is never shown twice.</div>
+</body></html>

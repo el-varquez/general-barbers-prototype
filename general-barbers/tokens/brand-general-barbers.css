@@ -1,0 +1,26 @@
+/* Brand: General Barbers (General Santos City). The brand file defines ONLY:
+   neutral ramp --n-*, accent ramp --a-* + --a-contrast, fonts, radii, the badge texture,
+   and the app surface palette (the phone and the dashboard are dark by design in every page theme). */
+:root, [data-brand="general-barbers"] {
+  --brand-name: "General Barbers";
+  /* neutral ramp: green-cast greys, sampled from the badge canvas */
+  --n-0:#ffffff; --n-25:#fbfcfb; --n-50:#f4f7f4; --n-100:#eef1ec; --n-150:#e4e9e3;
+  --n-200:#dde3d9; --n-300:#c3ccc4; --n-400:#a0aca2; --n-500:#7d8b80; --n-600:#67725f;
+  --n-700:#485649; --n-800:#2f3d33; --n-850:#1b3823; --n-900:#142a1b; --n-925:#0f1c14; --n-950:#0b140f;
+  /* accent ramp: the badge green (#24522F is the logo canvas) */
+  --a-100:#e2f0e6; --a-200:#c4e2cc; --a-300:#8fc9a0; --a-400:#4db56a; --a-500:#3e8a52;
+  --a-600:#24522f; --a-700:#1e4527; --a-800:#16341f; --a-900:#0f2417;
+  --a-contrast:#ffffff;
+  /* type */
+  --font-ui:"Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --font-display:"Oswald", "Arial Narrow", Impact, sans-serif;
+  --font-mono:ui-monospace, "Cascadia Mono", Consolas, monospace;
+  /* shape: rounded, like the app */
+  --r-sm:9px; --r-md:12px; --r-lg:16px;
+  /* the badge canvas texture, laid over --a-600 wherever the logo sits on green */
+  --tex:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(0,0,0,.11) 0 1px,transparent 1px 3px);
+  /* app surfaces */
+  --app-bg:#0b140f; --app-panel:#0f1c14; --app-card:#142a1b; --app-card-hi:#1b3823;
+  --app-border:rgba(255,255,255,.08); --app-border-hi:rgba(77,181,106,.28);
+  --app-text:#ffffff; --app-text-md:rgba(255,255,255,.7); --app-text-dm:rgba(255,255,255,.42);
+}

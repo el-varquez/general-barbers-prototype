@@ -1,0 +1,150 @@
+<!-- @dsCard group="Overview" viewport="1100x900" subtitle="Client-facing demo cover: the flow, the twenty-beat walkthrough, and every other screen" name="Demo cover" -->
+<!doctype html><html data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>General Barbers — booking app demo</title><link rel="stylesheet" href="styles.css"><style>
+body{display:flex;justify-content:center}
+.hero{display:flex;flex-direction:column;gap:14px;padding-bottom:30px;border-bottom:1px solid var(--border)}
+.wordmark{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-lg);letter-spacing:1.2px;text-transform:uppercase;line-height:1.1}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:6px}
+.fact{display:flex;flex-direction:column;gap:2px}
+.fact b{font-size:var(--fs-xl);font-weight:var(--fw-semibold);font-variant-numeric:tabular-nums}
+.fact span{font-size:var(--fs-sm);color:var(--text-muted)}
+.cta{display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.flowstrip{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}
+.fs{border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface);padding:12px;display:flex;flex-direction:column;gap:7px}
+.fs .gb-pill{align-self:flex-start}
+.fs span{font-size:var(--fs-xs);color:var(--text-muted);line-height:1.45}
+.flowfig{margin-top:12px;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+.flowfig svg{display:block;width:100%;height:auto}
+.flowfig a{display:block}
+@media(max-width:760px){.flowstrip{grid-template-columns:1fr 1fr}}
+</style></head><body>
+<div class="gb-doc">
+  <header class="hero">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <div class="gb-logotile" style="width:44px;height:44px"><i class="gb-logo"></i></div>
+      <div><div class="wordmark">General Barbers</div><div style="font-size:var(--fs-xs);color:var(--text-faint)">JP Laurel · Polomolok · Calumpang — General Santos City</div></div>
+      <span class="gb-pill t-info" style="margin-left:auto"><span class="dot"></span>Interactive prototype · not production</span>
+    </div>
+    <h1>Booking, queue and check-in for a three-branch barbershop</h1>
+    <p class="lede">Customers can book and pay a downpayment in the app, while the front desk can add walk-ins in seconds. Both enter one live queue, follow the same chair and payment workflow, and feed the same customer and sales records.</p>
+    <div class="facts">
+      <div class="fact"><b>3</b><span>branches</span></div>
+      <div class="fact"><b>3</b><span>apps in one: customer, barber, front desk</span></div>
+      <div class="fact"><b>33</b><span>screens in this mock</span></div>
+      <div class="fact"><b>5</b><span>booking statuses</span></div>
+      <div class="fact"><b>1</b><span>QR code, scanned three times</span></div>
+    </div>
+    <div class="cta">
+      <a class="gb-btn gb-btn-primary gb-btn-lg" href="presentation/Client Presentation.dc.html">Open the client presentation</a>
+      <a class="gb-btn gb-btn-secondary gb-btn-lg" href="ui_kits/mobile/launch.card.html">Start the walkthrough</a>
+      <a class="gb-btn gb-btn-secondary gb-btn-lg" href="ui_kits/desktop/dashboard.card.html">Web admin</a>
+      <a href="guidelines/booking-flow.card.html" style="font-size:var(--fs-sm)">The flow chart</a>
+    </div>
+  </header>
+
+  <section class="gb-sec">
+    <div class="gb-sech"><h2>The flow at a glance</h2><span>online booking or walk-in — one queue, five visit statuses</span></div>
+    <div class="flowstrip">
+      <div class="fs"><span class="gb-pill t-booked">Booked</span><span>The customer pays the 50% downpayment in the app. A QR code is generated.</span></div>
+      <div class="fs"><span class="gb-pill t-queued">In queue</span><span>Front desk scans the QR on arrival. Position and wait show on the phone.</span></div>
+      <div class="fs"><span class="gb-pill t-chair">In the chair</span><span>The barber scans the same QR at the chair and taps Start cut.</span></div>
+      <div class="fs"><span class="gb-pill t-done">Cut done</span><span>The barber taps Mark as done. The next customer is notified automatically.</span></div>
+      <div class="fs"><span class="gb-pill t-complete">Completed</span><span>Front desk scans again, collects the balance, and the rating prompt goes out.</span></div>
+    </div>
+    <div class="flowfig"><a href="guidelines/booking-flow.card.html" title="Open the flow chart full size"><svg id="flowsvg" role="img" aria-label="Customer visit flow showing online bookings and walk-ins merging into one barber queue"></svg></a></div>
+  </section>
+
+  <section class="gb-sec">
+    <div class="gb-sech"><h2>The walkthrough</h2><span>twenty beats, in order — the customer books, the barber cuts, the front desk settles; every screen carries a step bar with &larr; &rarr;</span></div>
+    <div class="gb-steps">
+      <a class="gb-step" href="ui_kits/mobile/launch.card.html"><span class="n">0</span><span class="b"><b>Launch</b><span>The badge on the shop's own green, then the welcome screen.</span></span><span class="who">Customer</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/mobile/sign-in.card.html"><span class="n">1</span><span class="b"><b>Sign in</b><span>Google, Facebook or a phone code. Staff accounts open the barber app instead.</span></span><span class="who">Customer</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/mobile/home.card.html"><span class="n">2</span><span class="b"><b>Home</b><span>Built for repeat customers: last barber, branches, quick services, the live booking.</span></span><span class="who">Customer</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/mobile/branch.card.html"><span class="n">3</span><span class="b"><b>Branch, barber, cut, time</b><span>Four taps: JP Laurel, Jay, skin fade, 2:00 PM. Custom cuts carry notes and a photo.</span></span><span class="who">Customer</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/mobile/checkout.card.html"><span class="n">4</span><span class="b"><b>Checkout and downpayment</b><span>50% via GCash or Maya. The balance is settled at the shop.</span></span><span class="who">Customer</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/mobile/qr-status.card.html"><span class="n">5</span><span class="b"><b>QR code and live status</b><span>One code for the whole visit, with the live status underneath it.</span></span><span class="who">Customer</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/desktop/front-desk-scan.card.html"><span class="n">6</span><span class="b"><b>Front desk: check in</b><span>Scan on arrival, add to the queue. Position and wait go to the phone.</span></span><span class="who">Front desk</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/mobile/barber-my-chair.card.html"><span class="n">7</span><span class="b"><b>Barber: my chair</b><span>Now cutting, up next in booking order, done today.</span></span><span class="who">Barber</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/mobile/barber-booking.card.html"><span class="n">8</span><span class="b"><b>Barber: scan and start</b><span>Scan the same QR at the chair, read the notes, tap Start cut.</span></span><span class="who">Barber</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/mobile/barber-done.card.html"><span class="n">9</span><span class="b"><b>Barber: mark as done</b><span>The next customer's phone is told to come to the chair, or to check in first.</span></span><span class="who">Barber</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/mobile/qr-cut-done.card.html"><span class="n">10</span><span class="b"><b>Customer: settle the balance</b><span>The app says the cut is done and what to pay at the front desk.</span></span><span class="who">Customer</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/desktop/live-queue.card.html"><span class="n">11</span><span class="b"><b>Front desk: live queue</b><span>One queue per chair. Call, check in, start, done and no-show, all by hand when the QR is down.</span></span><span class="who">Front desk</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/mobile/review.card.html"><span class="n">12</span><span class="b"><b>Rate the barber</b><span>Push after completion. Stars, quick tags, a note; live on the profile at once.</span></span><span class="who">Customer</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/mobile/barber-reviews.card.html"><span class="n">13</span><span class="b"><b>Barber: my reviews</b><span>Verified ratings land on the barber's own phone.</span></span><span class="who">Barber</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/desktop/dashboard.card.html"><span class="n">14</span><span class="b"><b>The owner's dashboard</b><span>Today's bookings, revenue, the queue, barbers and top services.</span></span><span class="who">Owner</span><span class="arrow">&rarr;</span></a>
+      <a class="gb-step" href="ui_kits/desktop/users-roles.card.html"><span class="n">15</span><span class="b"><b>Users and roles</b><span>Staff accounts, the permissions matrix, and the dashboard seen from the front desk seat.</span></span><span class="who">Owner</span><span class="arrow">&rarr;</span></a>
+    </div>
+  </section>
+
+  <section class="gb-sec">
+    <div class="gb-sech"><h2>The customer app</h2><span>every screen, whether or not it is on the walkthrough</span></div>
+    <div class="gb-grid">
+      <a class="gb-tile" href="ui_kits/mobile/launch.card.html"><b>Launch</b><span>loading screen</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/welcome.card.html"><b>Welcome</b><span>first open</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/sign-in.card.html"><b>Sign in</b><span>OAuth or phone</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/home.card.html"><b>Home</b><span>repeat customers first</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/branch.card.html"><b>Select branch</b><span>three storefronts</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/barbers.card.html"><b>Select barber</b><span>or next available</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/barber-profile.card.html"><b>Barber profile</b><span>booking, portfolio, reviews</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/cuts.card.html"><b>Select cut</b><span>menu with pesos and minutes</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/custom-cut.card.html"><b>Custom cut</b><span>notes and a reference photo</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/time-slot.card.html"><b>Pick a time</b><span>taken slots stay visible</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/checkout.card.html"><b>Checkout</b><span>50% downpayment</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/qr-status.card.html"><b>QR code</b><span>booked</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/qr-in-queue.card.html"><b>In the queue</b><span>position and wait</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/qr-cut-done.card.html"><b>Cut done</b><span>settle at the front desk</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/review.card.html"><b>Rate the barber</b><span>after completion</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/thanks.card.html"><b>Review posted</b><span>live on the profile</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/my-bookings.card.html"><b>My bookings</b><span>upcoming and past</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/profile.card.html"><b>Customer account</b><span>visits and spend</span></a>
+    </div>
+  </section>
+
+  <section class="gb-sec">
+    <div class="gb-sech"><h2>The barber app</h2><span>the same app on a staff account — the owner adds the account first, the sign-in matches it</span></div>
+    <div class="gb-grid">
+      <a class="gb-tile" href="ui_kits/mobile/barber-my-chair.card.html"><b>My chair</b><span>now cutting, up next</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/barber-scan.card.html"><b>Scan at the chair</b><span>the same QR</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/barber-booking.card.html"><b>Start the cut</b><span>notes and photo</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/barber-done.card.html"><b>Mark as done</b><span>next customer notified</span></a>
+      <a class="gb-tile" href="ui_kits/mobile/barber-reviews.card.html"><b>My reviews</b><span>verified ratings</span></a>
+    </div>
+  </section>
+
+  <section class="gb-sec">
+    <div class="gb-sech"><h2>The dashboard</h2><span>web, for the front desk tablet and the owner's laptop — the sidebar of any screen reaches every other</span></div>
+    <div class="gb-grid">
+      <a class="gb-tile" href="ui_kits/desktop/dashboard.card.html"><b>Dashboard</b><span>today at a glance</span></a>
+      <a class="gb-tile" href="ui_kits/desktop/front-desk-scan.card.html"><b>Front desk scan</b><span>check in, collect balance</span></a>
+      <a class="gb-tile" href="ui_kits/desktop/live-queue.card.html"><b>Live queue</b><span>one queue per chair</span></a>
+      <a class="gb-tile" href="ui_kits/desktop/bookings.card.html"><b>Bookings</b><span>every status</span></a>
+      <a class="gb-tile" href="ui_kits/desktop/barbers.card.html"><b>Barbers</b><span>performance per chair</span></a>
+      <a class="gb-tile" href="ui_kits/desktop/services.card.html"><b>Services</b><span>menu and pricing</span></a>
+      <a class="gb-tile" href="ui_kits/desktop/customers.card.html"><b>Customers</b><span>built from bookings</span></a>
+      <a class="gb-tile" href="ui_kits/desktop/sales.card.html"><b>Sales</b><span>downpayments and balances</span></a>
+      <a class="gb-tile" href="ui_kits/desktop/reports.card.html"><b>Reports</b><span>peak hours, no-shows</span></a>
+      <a class="gb-tile" href="ui_kits/desktop/users-roles.card.html"><b>Users and roles</b><span>staff accounts, permissions</span></a>
+    </div>
+  </section>
+
+  <section class="gb-sec">
+    <div class="gb-sech"><h2>Foundations and references</h2><span>the design system behind the screens</span></div>
+    <div class="gb-grid">
+      <a class="gb-tile" href="guidelines/identity.card.html"><b>Identity</b><span>the badge and its canvas</span></a>
+      <a class="gb-tile" href="guidelines/color.card.html"><b>Color</b><span>ramps and roles</span></a>
+      <a class="gb-tile" href="guidelines/type.card.html"><b>Type</b><span>Oswald over the system face</span></a>
+      <a class="gb-tile" href="guidelines/status.card.html"><b>Booking statuses</b><span>five states, who moves them</span></a>
+      <a class="gb-tile" href="guidelines/roles.card.html"><b>Roles and permissions</b><span>owner to customer</span></a>
+      <a class="gb-tile" href="guidelines/illustrations.card.html"><b>Illustrations</b><span>storefronts, avatars, cuts</span></a>
+      <a class="gb-tile" href="guidelines/booking-flow.card.html"><b>Customer visit flow</b><span>online bookings and walk-ins, full size</span></a>
+      <a class="gb-tile" href="patterns/live-status.card.html"><b>Live status</b><span>the vertical stepper</span></a>
+      <a class="gb-tile" href="patterns/queue-chair.card.html"><b>Queue per chair</b><span>the dashboard pattern</span></a>
+      <a class="gb-tile" href="patterns/qr-card.card.html"><b>QR card</b><span>the code the shop scans</span></a>
+      <a class="gb-tile" href="patterns/push-banner.card.html"><b>Push banner</b><span>chair ready, rate your visit</span></a>
+      <a class="gb-tile" href="components/primitives.card.html"><b>Primitives</b><span>buttons, pills, fields, tables</span></a>
+    </div>
+    <p class="gb-note">Placeholder data throughout is realistic but invented: pesos, General Santos City addresses, and a shop day set on September 1, 2026. The 50% downpayment is the proposal being pitched, not a confirmed shop policy. Open decisions are listed in <a href="guidelines/open-questions.md">guidelines/open-questions.md</a>.</p>
+  </section>
+</div>
+<script src="components/gb-flow.js"></script>
+<script>GB_FLOW.render(document.getElementById('flowsvg'),{logo:'uploads/logo-badge.png'});</script>
+</body></html>

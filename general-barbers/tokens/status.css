@@ -1,0 +1,30 @@
+/* Booking status colors — semantic-layer owned so the five statuses read the same on every surface.
+   pending → booked (neutral), queued → in queue (green), in-progress → in the chair (amber),
+   done → cut done (blue), complete → completed (deep green), noshow → no-show (red). */
+:root, [data-theme="light"] {
+  --status-booked:#67725f;   --status-booked-soft:#eef1ec;   --status-booked-text:#4f5c53;
+  --status-queued:#1e5a30;   --status-queued-soft:#d9eedf;   --status-queued-text:#1e5a30;
+  --status-chair:#9a6206;    --status-chair-soft:#fbe8c4;    --status-chair-text:#8a5a08;
+  --status-done:#1d4e89;     --status-done-soft:#dce9f7;     --status-done-text:#1d4e89;
+  --status-complete:#24522f; --status-complete-soft:#e2f0e6; --status-complete-text:#3a6b47;
+  --status-noshow:#b23830;   --status-noshow-soft:#fbe8e6;   --status-noshow-text:#96302a;
+  /* generic tones used by banners and the demo chrome */
+  --status-success:#1f7a48; --status-success-soft:#e2f3e9; --status-success-text:#17603a;
+  --status-warning:#98690f; --status-warning-soft:#faf0d9; --status-warning-text:#7d570d;
+  --status-danger:#b23830;  --status-danger-soft:#fbe8e6;  --status-danger-text:#96302a;
+  --status-info:#2f6da8;    --status-info-soft:#e6f0f9;    --status-info-text:#285d8d;
+  --status-neutral:var(--n-500); --status-neutral-soft:var(--n-100); --status-neutral-text:var(--n-700);
+}
+[data-theme="dark"] {
+  --status-booked:rgba(255,255,255,.55); --status-booked-soft:rgba(255,255,255,.07); --status-booked-text:rgba(255,255,255,.6);
+  --status-queued:#4db56a;   --status-queued-soft:rgba(77,181,106,.15);   --status-queued-text:#4db56a;
+  --status-chair:#f59e0b;    --status-chair-soft:rgba(245,158,11,.15);    --status-chair-text:#f59e0b;
+  --status-done:#60a5fa;     --status-done-soft:rgba(96,165,250,.14);     --status-done-text:#60a5fa;
+  --status-complete:#9fd3ae; --status-complete-soft:rgba(159,211,174,.12); --status-complete-text:#9fd3ae;
+  --status-noshow:#f16a75;   --status-noshow-soft:rgba(241,106,117,.14);  --status-noshow-text:#f16a75;
+  --status-success:#4fc186; --status-success-soft:#17342a; --status-success-text:#8fe0b7;
+  --status-warning:#f59e0b; --status-warning-soft:#3a2f16; --status-warning-text:#ecc987;
+  --status-danger:#f16a75;  --status-danger-soft:#42211f;  --status-danger-text:#f1a49d;
+  --status-info:#60a5fa;    --status-info-soft:#1c3450;    --status-info-text:#a8cdef;
+  --status-neutral:var(--n-500); --status-neutral-soft:var(--n-850); --status-neutral-text:var(--n-300);
+}

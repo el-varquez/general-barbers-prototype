@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- @dsCard group="Presentation" viewport="1280x720" name="Client presentation" subtitle="16-slide client story: where the day leaks, one QR scanned three times, a visit screen by screen, what the shop gets" -->
+<title>General Barbers — client presentation</title>
+<link rel="stylesheet" href="../_ds/general-barbers/styles.css" />
+<script src="./ds-base.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+/* Deck scaffolding: slide layout and projection-scale sizing. Every color, font and radius comes from the system tokens.
+   The stage is 1920×1080 and scales to the window; change one number here to re-size the whole deck. */
+deck-stage:not(:defined){visibility:hidden}
+deck-stage{
+  --type-display:200px; --type-title:96px; --type-subtitle:40px; --type-body:34px; --type-small:28px; --type-kicker:22px;
+  --pad-x:120px; --pad-top:96px; --pad-bottom:130px;
+}
+.slide{display:flex;flex-direction:column;box-sizing:border-box;padding:var(--pad-top) var(--pad-x) var(--pad-bottom);
+  background:var(--surface-page);color:var(--text);font-family:var(--font-ui);text-wrap:pretty;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+.slide.canvas{background-color:var(--a-600);background-image:radial-gradient(120% 90% at 50% 28%,rgba(255,255,255,.12),transparent 60%),var(--tex);color:#fff}
+.slide.dark{background:var(--app-bg);color:var(--app-text)}
+.stripes{position:absolute;left:var(--pad-x);right:var(--pad-x);top:52px;height:14px;border-top:4px solid rgba(255,255,255,.55);border-bottom:4px solid rgba(255,255,255,.55);pointer-events:none}
+.slide:not(.canvas):not(.dark) .stripes{border-color:var(--a-600);opacity:.35}
+.kicker{font-family:var(--font-display);font-weight:500;font-size:var(--type-kicker);letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin:0 0 18px}
+.canvas .kicker,.dark .kicker{color:rgba(255,255,255,.6)}
+.title{font-family:var(--font-display);font-weight:700;font-size:var(--type-title);line-height:1;text-transform:uppercase;letter-spacing:.5px;margin:0 0 40px;max-width:24ch}
+.display{font-family:var(--font-display);font-weight:700;font-size:var(--type-display);line-height:.95;text-transform:uppercase;letter-spacing:1px;margin:0}
+.body{font-size:var(--type-body);line-height:1.4;max-width:34ch;margin:0}
+.muted{color:var(--text-muted)}
+.canvas .muted,.dark .muted{color:rgba(255,255,255,.7)}
+.bullets{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:22px;font-size:var(--type-body);line-height:1.35;max-width:1200px}
+.bullets li{display:flex;gap:22px;align-items:flex-start}
+.bullets li::before{content:"";width:14px;height:14px;border-radius:7px;background:var(--a-400);flex:none;margin-top:16px}
+.foot{position:absolute;left:var(--pad-x);right:var(--pad-x);bottom:52px;display:flex;justify-content:space-between;font-size:var(--type-small);color:var(--text-faint)}
+.canvas .foot,.dark .foot{color:rgba(255,255,255,.5)}
+.cols{display:grid;gap:40px;flex:1;align-content:start}
+.cols.c2{grid-template-columns:1fr 1fr}.cols.c3{grid-template-columns:1fr 1fr 1fr}.cols.c4{grid-template-columns:repeat(4,1fr)}
+.cell h3{font-family:var(--font-display);font-weight:700;font-size:var(--type-subtitle);text-transform:uppercase;letter-spacing:.5px;margin:0 0 12px;line-height:1.05}
+.cell p{font-size:var(--type-small);line-height:1.4;margin:0;color:var(--text-muted)}
+.canvas .cell p,.dark .cell p{color:rgba(255,255,255,.75)}
+.num{font-family:var(--font-display);font-weight:700;font-size:120px;line-height:1;color:var(--a-400);margin:0 0 6px}
+.ghost{font-family:var(--font-display);font-weight:700;font-size:420px;line-height:.85;color:rgba(255,255,255,.12);margin:0 0 -30px -8px}
+.screen{display:grid;grid-template-columns:1fr 640px;gap:80px;flex:1;align-items:start}
+.fig{border-radius:28px;overflow:hidden;background:var(--app-card);border:1px solid var(--app-border);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg)}
+.fig svg{width:100%;height:100%;display:block}
+.fig.hero{aspect-ratio:360/160}
+.fig.av{aspect-ratio:1;padding:70px;box-sizing:border-box}
+.fig.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:14px;box-sizing:border-box;aspect-ratio:1;background:var(--app-bg)}
+.fig.grid div{border-radius:14px;overflow:hidden}
+.live{display:inline-flex;align-items:center;gap:14px;margin-top:40px;padding:0 34px;height:78px;border-radius:20px;background:var(--a-600);color:#fff;font-size:var(--type-small);font-weight:600;text-decoration:none}
+.live:hover{background:var(--a-700);color:#fff;text-decoration:none}
+.canvas .live{background:#fff;color:var(--a-600)}
+.strip{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:auto}
+.strip .s{padding:22px 24px;border-radius:18px;background:var(--surface);border:1px solid var(--border);display:flex;flex-direction:column;gap:8px}
+.strip .s b{font-family:var(--font-display);font-weight:700;font-size:var(--type-subtitle);text-transform:uppercase;letter-spacing:.5px;line-height:1}
+.strip .s span{font-size:var(--type-small);color:var(--text-muted);line-height:1.3}
+.strip .s.booked b{color:var(--status-booked)}.strip .s.queued b{color:var(--status-queued)}.strip .s.chair b{color:var(--status-chair)}.strip .s.done b{color:var(--status-done)}.strip .s.complete b{color:var(--status-complete)}
+table.tbl{width:100%;border-collapse:collapse;font-size:var(--type-small);line-height:1.3}
+table.tbl th{text-align:left;padding:0 20px 18px 0;font-family:var(--font-display);font-weight:500;font-size:var(--type-kicker);letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);border-bottom:3px solid var(--a-600)}
+table.tbl td{padding:22px 20px 22px 0;border-bottom:1px solid var(--border);vertical-align:top}
+table.tbl td:first-child{font-weight:600;width:22%}
+table.tbl td.before{color:var(--text-muted)}
+.badge-big{width:560px;filter:drop-shadow(0 30px 60px rgba(0,0,0,.35))}
+.cover-right{position:absolute;right:var(--pad-x);top:50%;transform:translateY(-50%)}
+@media (prefers-reduced-motion:no-preference){[data-deck-active] .rise{animation:rise .6s cubic-bezier(.2,.8,.2,1) both}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<deck-stage width="1920" height="1080">
+
+  <section class="slide canvas" data-label="Cover">
+    <div class="stripes"></div>
+    <p class="kicker">Client presentation</p>
+    <div class="rise" style="margin-top:auto;margin-bottom:auto">
+      <h1 class="display" style="font-size:168px;line-height:.92">Book.<br>Scan.<br>Cut.<br>Settle.</h1>
+      <p class="body muted" style="margin-top:28px">A booking app for General Barbers, General Santos City.</p>
+    </div>
+    <div class="cover-right"><i class="gb-logo badge-big"></i></div>
+    <div class="foot"><span>Interactive prototype</span><span>September 2026</span></div>
+  </section>
+
+  <section class="slide" data-label="Contents">
+    <div class="stripes"></div>
+    <p class="kicker">Contents</p>
+    <h2 class="title">Four parts</h2>
+    <ul class="bullets rise" style="font-size:var(--type-subtitle)">
+      <li><span><b>01</b>&nbsp;&nbsp;Where the day leaks</span></li>
+      <li><span><b>02</b>&nbsp;&nbsp;One QR code, scanned three times</span></li>
+      <li><span><b>03</b>&nbsp;&nbsp;A visit, screen by screen</span></li>
+      <li><span><b>04</b>&nbsp;&nbsp;What the shop gets, and what to decide</span></li>
+    </ul>
+    <div class="foot"><span>General Barbers · booking app</span><span>2 / 16</span></div>
+  </section>
+
+  <section class="slide canvas" data-label="01 Where the day leaks">
+    <div class="stripes"></div>
+    <div class="rise" style="margin-top:auto"><div class="ghost">01</div><h2 class="title" style="margin:0">Where the day leaks</h2></div>
+    <div class="foot"><span>General Barbers · booking app</span><span>3 / 16</span></div>
+  </section>
+
+  <section class="slide" data-label="Four leaks">
+    <div class="stripes"></div>
+    <p class="kicker">01 · Where the day leaks</p>
+    <h2 class="title">Four things that go wrong every week</h2>
+    <div class="cols c4 rise">
+      <div class="cell"><h3>No-shows</h3><p>A Messenger booking costs nothing to break. The chair sits empty, the barber waits, the walk-in already left.</p></div>
+      <div class="cell"><h3>“Who’s next?”</h3><p>Barbers ask the counter, customers hover by the chair, and the receptionist is the only one who knows the order.</p></div>
+      <div class="cell"><h3>Cash on paper</h3><p>Payments go on a list. Nobody can say what each barber earned this week without adding it up by hand.</p></div>
+      <div class="cell"><h3>No customer list</h3><p>Hundreds of regulars, and not one phone number the shop can reach when a slot opens up.</p></div>
+    </div>
+    <div class="foot"><span>General Barbers · booking app</span><span>4 / 16</span></div>
+  </section>
+
+  <section class="slide canvas" data-label="02 One QR, three scans">
+    <div class="stripes"></div>
+    <div class="rise" style="margin-top:auto"><div class="ghost">02</div><h2 class="title" style="margin:0">One QR code, scanned three times</h2></div>
+    <div class="foot"><span>General Barbers · booking app</span><span>5 / 16</span></div>
+  </section>
+
+  <section class="slide" data-label="Three scans">
+    <div class="stripes"></div>
+    <p class="kicker">02 · One QR, three scans</p>
+    <h2 class="title">The whole visit on one code</h2>
+    <div class="cols c3 rise">
+      <div class="cell"><div class="num">1</div><h3>On arrival</h3><p>The front desk scans it. The customer is in the queue, and their phone shows position and wait.</p></div>
+      <div class="cell"><div class="num">2</div><h3>At the chair</h3><p>The barber scans it, reads the notes and the reference photo, taps Start cut, then Mark as done.</p></div>
+      <div class="cell"><div class="num">3</div><h3>At the counter</h3><p>The front desk scans it once more, collects the balance, and the booking is complete.</p></div>
+    </div>
+    <div class="strip rise">
+      <div class="s booked"><b>Booked</b><span>customer pays 50%</span></div>
+      <div class="s queued"><b>In queue</b><span>front desk scans</span></div>
+      <div class="s chair"><b>In the chair</b><span>barber scans, starts</span></div>
+      <div class="s done"><b>Cut done</b><span>next customer called</span></div>
+      <div class="s complete"><b>Completed</b><span>balance collected</span></div>
+    </div>
+    <div class="foot"><span>General Barbers · booking app</span><span>6 / 16</span></div>
+  </section>
+
+  <section class="slide dark" data-label="Half now">
+    <div class="stripes"></div>
+    <p class="kicker">02 · One QR, three scans</p>
+    <div class="rise" style="margin-top:auto;margin-bottom:auto">
+      <h2 class="display" style="font-size:150px">Half now,<br>half at the counter.</h2>
+      <p class="body muted" style="margin-top:36px;max-width:40ch">A 50% downpayment through GCash or Maya turns a Messenger “see you at 2” into a booking with something at stake. The balance is settled at the shop, in cash or by phone, and every peso lands in the report.</p>
+    </div>
+    <div class="foot"><span>Proposal: the shop's current policy is still to be confirmed</span><span>7 / 16</span></div>
+  </section>
+
+  <section class="slide canvas" data-label="03 A visit, screen by screen">
+    <div class="stripes"></div>
+    <div class="rise" style="margin-top:auto"><div class="ghost">03</div><h2 class="title" style="margin:0">A visit, screen by screen</h2></div>
+    <div class="foot"><span>General Barbers · booking app</span><span>8 / 16</span></div>
+  </section>
+
+  <section class="slide" data-label="The customer books">
+    <div class="stripes"></div>
+    <p class="kicker">03 · A visit, screen by screen</p>
+    <h2 class="title">The customer books in four taps</h2>
+    <div class="screen">
+      <div>
+        <ul class="bullets rise">
+          <li><span>Sign in with Google, Facebook or a phone code. No passwords.</span></li>
+          <li><span>Branch, barber, cut, time. A custom cut carries notes and a reference photo to the chair.</span></li>
+          <li><span>Pay the downpayment, get the QR, and watch the live status under it.</span></li>
+        </ul>
+        <a class="live" href="../ui_kits/mobile/home.card.html">Open the customer app</a>
+      </div>
+      <div class="fig hero" data-art="hero"></div>
+    </div>
+    <div class="foot"><span>General Barbers · booking app</span><span>9 / 16</span></div>
+  </section>
+
+  <section class="slide" data-label="The front desk">
+    <div class="stripes"></div>
+    <p class="kicker">03 · A visit, screen by screen</p>
+    <h2 class="title">The front desk checks them in</h2>
+    <div class="screen">
+      <div>
+        <ul class="bullets rise">
+          <li><span>One scan on arrival adds the customer to their barber's queue.</span></li>
+          <li><span>The live queue shows every chair: who is in it, who is next, and the by-hand buttons for the day the QR is down.</span></li>
+          <li><span>The final scan collects the balance and closes the visit.</span></li>
+        </ul>
+        <a class="live" href="../ui_kits/desktop/live-queue.card.html">Open the live queue</a>
+      </div>
+      <div class="fig" data-art="viewfinder"></div>
+    </div>
+    <div class="foot"><span>General Barbers · booking app</span><span>10 / 16</span></div>
+  </section>
+
+  <section class="slide" data-label="The barber's chair">
+    <div class="stripes"></div>
+    <p class="kicker">03 · A visit, screen by screen</p>
+    <h2 class="title">The barber's chair, in their pocket</h2>
+    <div class="screen">
+      <div>
+        <ul class="bullets rise">
+          <li><span>Now cutting, up next in booking order, done today. Nobody asks the counter who is next.</span></li>
+          <li><span>Scan the same QR at the chair: the notes and the photo are already there.</span></li>
+          <li><span>Mark as done, and the next customer's phone says “your chair is ready”, or “check in first”.</span></li>
+        </ul>
+        <a class="live" href="../ui_kits/mobile/barber-my-chair.card.html">Open the barber app</a>
+      </div>
+      <div class="fig grid" data-art="cuts"></div>
+    </div>
+    <div class="foot"><span>General Barbers · booking app</span><span>11 / 16</span></div>
+  </section>
+
+  <section class="slide" data-label="Done, settle, rate">
+    <div class="stripes"></div>
+    <p class="kicker">03 · A visit, screen by screen</p>
+    <h2 class="title">Done, settled, rated</h2>
+    <div class="screen">
+      <div>
+        <ul class="bullets rise">
+          <li><span>The app tells the customer what to pay and where. No “magkano?” at the counter.</span></li>
+          <li><span>Completion sends a push: rate your visit with Jay. Stars and quick tags, five seconds.</span></li>
+          <li><span>The review lands on the barber's profile and on the barber's own phone at once.</span></li>
+        </ul>
+        <a class="live" href="../ui_kits/mobile/review.card.html">Open the review screen</a>
+      </div>
+      <div class="fig av" data-art="jay"></div>
+    </div>
+    <div class="foot"><span>General Barbers · booking app</span><span>12 / 16</span></div>
+  </section>
+
+  <section class="slide canvas" data-label="04 What the shop gets">
+    <div class="stripes"></div>
+    <div class="rise" style="margin-top:auto"><div class="ghost">04</div><h2 class="title" style="margin:0">What the shop gets</h2></div>
+    <div class="foot"><span>General Barbers · booking app</span><span>13 / 16</span></div>
+  </section>
+
+  <section class="slide" data-label="Before and after">
+    <div class="stripes"></div>
+    <p class="kicker">04 · What the shop gets</p>
+    <h2 class="title">Before and after</h2>
+    <table class="tbl rise">
+      <thead><tr><th></th><th>Today</th><th>With the app</th></tr></thead>
+      <tbody>
+        <tr><td>No-shows</td><td class="before">Nothing at stake; the chair waits</td><td>50% paid up front; the slot is worth keeping</td></tr>
+        <tr><td>The queue</td><td class="before">Held in the receptionist's head</td><td>One queue per chair; the phone calls the customer</td></tr>
+        <tr><td>Money</td><td class="before">A paper list, added up by hand</td><td>Every visit timestamped and priced; downpayments verified by GCash and Maya</td></tr>
+        <tr><td>Customers</td><td class="before">Faces, not records</td><td>A database with visits, spend and a favourite barber</td></tr>
+        <tr><td>Reviews</td><td class="before">Facebook comments about the shop</td><td>Verified ratings per barber, after a paid visit</td></tr>
+      </tbody>
+    </table>
+    <div class="foot"><span>General Barbers · booking app</span><span>14 / 16</span></div>
+  </section>
+
+  <section class="slide" data-label="What to decide">
+    <div class="stripes"></div>
+    <p class="kicker">04 · What the shop gets</p>
+    <h2 class="title">What to decide before a pilot</h2>
+    <ul class="bullets rise">
+      <li><span>The downpayment: 50%, a flat ₱100, or none for regulars.</span></li>
+      <li><span>Who calls the next customer: the barber's Mark as done, or the front desk's completion scan.</span></li>
+      <li><span>Walk-ins and add-ons: entered at the counter so the report stays true without a POS.</span></li>
+      <li><span>Which sign-in each barber uses, so their staff account matches on the first try.</span></li>
+      <li><span>Pilot at JP Laurel with four chairs, then Polomolok and Calumpang.</span></li>
+    </ul>
+    <div class="foot"><span>General Barbers · booking app</span><span>15 / 16</span></div>
+  </section>
+
+  <section class="slide canvas" data-label="Close">
+    <div class="stripes"></div>
+    <div class="rise" style="margin-top:auto;margin-bottom:auto;display:flex;align-items:center;gap:120px">
+      <i class="gb-logo" style="width:420px;filter:drop-shadow(0 30px 60px rgba(0,0,0,.35))"></i>
+      <div><h2 class="display" style="font-size:150px">Pilot it at<br>JP Laurel.</h2><p class="body muted" style="margin-top:30px">Four chairs, one month, the real queue.</p></div>
+    </div>
+    <div class="foot"><span>Interactive prototype · every screen behind this deck is clickable</span><span>16 / 16</span></div>
+  </section>
+
+</deck-stage>
+
+<script type="application/json" id="speaker-notes">[
+ "Open on the badge. The pitch in one line: book, scan, cut, settle.",
+ "Four parts. Keep the first short; the owner already knows where it hurts.",
+ "Section divider.",
+ "Ask which of the four costs them most. Usually no-shows or the queue.",
+ "Section divider.",
+ "The core idea. One code, three scans, five statuses. Everything else follows from this.",
+ "Downpayment. Be clear this is a proposal; ask what they charge today, if anything.",
+ "Section divider.",
+ "Click through to the live customer app if there is time; otherwise describe the four taps.",
+ "The live queue is the front desk's screen. Show the by-hand buttons: nothing depends on the QR working.",
+ "The barber app. Emphasise no cash at the chair and the automatic call to the next customer.",
+ "Reviews per barber. This is what fills calendars.",
+ "Section divider.",
+ "Before and after. Let the table speak.",
+ "Decisions. Get answers to the first two in the room.",
+ "Close on the pilot. Four chairs, one month."
+]</script>
+
+<script src="../components/gb-art.js"></script>
+<script src="./deck-stage.js"></script>
+<script>
+(function(){
+  var A=window.GB_ART; if(!A) return;
+  var f={hero:function(){return A.hero()},viewfinder:function(){return A.viewfinder()},jay:function(){return A.avatar('jay')},
+    cuts:function(){return [0,1,2,3,4,5].map(function(i){return '<div>'+A.style(i)+'</div>'}).join('')}};
+  document.querySelectorAll('[data-art]').forEach(function(el){var k=el.getAttribute('data-art');if(f[k])el.innerHTML=f[k]()});
+})();
+</script>
+<style>@keyframes gbscan{0%{transform:translateY(0)}50%{transform:translateY(178px)}100%{transform:translateY(0)}}.gb-scanline{animation:gbscan 2.6s ease-in-out infinite}</style>
+</body>
+</html>

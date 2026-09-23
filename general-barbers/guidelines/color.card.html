@@ -1,0 +1,33 @@
+<!-- @dsCard group="Brand" viewport="760x420" subtitle="One green, two ramps: the badge canvas and the bright accent, over green-cast neutrals" name="Color" -->
+<!doctype html><html data-theme="light"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:14px;display:flex;flex-direction:column;gap:14px}
+.ramp{display:flex;gap:4px}
+.sw{flex:1;height:44px;border-radius:6px;display:flex;align-items:flex-end;padding:4px 6px;box-sizing:border-box;font-size:10px;font-variant-numeric:tabular-nums;border:1px solid rgba(0,0,0,.06)}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.role{border:1px solid var(--border);border-radius:var(--r-md);padding:10px 12px;display:flex;gap:10px;align-items:center;font-size:var(--fs-sm)}
+.role i{width:28px;height:28px;border-radius:8px;flex:none;border:1px solid var(--border)}
+.role b{display:block;font-size:var(--fs-sm)}
+.role span{color:var(--text-muted);font-size:var(--fs-xs)}
+</style></head><body>
+<div><div class="eyebrow" style="margin-bottom:6px">Accent ramp --a-100 … --a-900</div>
+<div class="ramp">
+  <div class="sw" style="background:var(--a-100)">100</div><div class="sw" style="background:var(--a-200)">200</div><div class="sw" style="background:var(--a-300)">300</div>
+  <div class="sw" style="background:var(--a-400);color:#fff">400 accent</div><div class="sw" style="background:var(--a-500);color:#fff">500</div><div class="sw" style="background:var(--a-600);color:#fff">600 canvas</div>
+  <div class="sw" style="background:var(--a-700);color:#fff">700</div><div class="sw" style="background:var(--a-800);color:#fff">800</div><div class="sw" style="background:var(--a-900);color:#fff">900</div>
+</div></div>
+<div><div class="eyebrow" style="margin-bottom:6px">Neutral ramp --n-0 … --n-950 (green-cast)</div>
+<div class="ramp">
+  <div class="sw" style="background:var(--n-0)">0</div><div class="sw" style="background:var(--n-50)">50</div><div class="sw" style="background:var(--n-100)">100 page</div><div class="sw" style="background:var(--n-200)">200</div>
+  <div class="sw" style="background:var(--n-300)">300</div><div class="sw" style="background:var(--n-400);color:#fff">400</div><div class="sw" style="background:var(--n-600);color:#fff">600</div>
+  <div class="sw" style="background:var(--n-800);color:#fff">800</div><div class="sw" style="background:var(--n-900);color:#fff">900 card</div><div class="sw" style="background:var(--n-950);color:#fff">950 app</div>
+</div></div>
+<div><div class="eyebrow" style="margin-bottom:6px">Roles the screens actually use</div>
+<div class="roles">
+  <div class="role"><i style="background:var(--app-bg)"></i><div><b>--app-bg</b><span>phone and dashboard ground</span></div></div>
+  <div class="role"><i style="background:var(--app-card)"></i><div><b>--app-card</b><span>cards, rows, sidebar panels</span></div></div>
+  <div class="role"><i style="background:var(--a-400)"></i><div><b>--accent (dark)</b><span>prices, links, selected pills</span></div></div>
+  <div class="role"><i style="background:var(--a-600)"></i><div><b>--accent (light)</b><span>primary buttons on paper, the canvas</span></div></div>
+  <div class="role"><i style="background:var(--status-chair)"></i><div><b>--status-chair</b><span>amber: in the chair</span></div></div>
+  <div class="role"><i style="background:var(--status-done)"></i><div><b>--status-done</b><span>blue: cut done, balance to settle</span></div></div>
+</div></div>
+</body></html>

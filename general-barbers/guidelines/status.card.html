@@ -1,0 +1,31 @@
+<!-- @dsCard group="Foundations" viewport="900x380" subtitle="Five booking statuses, one no-show branch, and who moves each one; the same pills in both themes" name="Booking statuses" -->
+<!doctype html><html data-theme="light"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:14px;display:grid;grid-template-columns:1.2fr 1fr;gap:14px}
+.panel{border:1px solid var(--border);border-radius:var(--r-lg);background:var(--surface);padding:14px 16px}
+.panel.dark{background:var(--app-bg);color:var(--app-text);border-color:var(--app-border)}
+.row{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--divider);font-size:var(--fs-sm)}
+.row:last-child{border-bottom:0}
+.row .gb-pill{min-width:104px;justify-content:center}
+.row span.who{color:var(--text-muted)}
+.dark .row{border-color:var(--app-border)}
+.dark .row span.who{color:var(--app-text-md)}
+</style></head><body>
+<div class="panel">
+  <div class="eyebrow" style="margin-bottom:8px">Light theme · who moves the booking</div>
+  <div class="row"><span class="gb-pill t-booked">Booked</span><span class="who">Customer pays the 50% downpayment in the app</span></div>
+  <div class="row"><span class="gb-pill t-queued">In queue</span><span class="who">Front desk scans the QR on arrival</span></div>
+  <div class="row"><span class="gb-pill t-chair">In the chair</span><span class="who">Barber scans the QR and taps Start cut</span></div>
+  <div class="row"><span class="gb-pill t-done">Cut done</span><span class="who">Barber taps Mark as done; the next customer is notified</span></div>
+  <div class="row"><span class="gb-pill t-complete">Completed</span><span class="who">Front desk scans again and collects the balance</span></div>
+  <div class="row"><span class="gb-pill t-noshow">No-show</span><span class="who">Front desk flags it; the downpayment stays with the shop</span></div>
+</div>
+<div class="panel dark" data-theme="dark">
+  <div class="eyebrow" style="margin-bottom:8px;color:var(--app-text-dm)">Dark theme · as seen in the apps</div>
+  <div class="row"><span class="gb-pill t-booked">Booked</span><span class="who">GB-0048 · 2:00 PM</span></div>
+  <div class="row"><span class="gb-pill t-queued">In queue</span><span class="who">position 2 · about 25 min</span></div>
+  <div class="row"><span class="gb-pill t-chair">In the chair</span><span class="who">started 2:04 PM</span></div>
+  <div class="row"><span class="gb-pill t-done">Cut done</span><span class="who">settle ₱100 at the front desk</span></div>
+  <div class="row"><span class="gb-pill t-complete">Completed</span><span class="who">rating prompt sent</span></div>
+  <div class="row"><span class="gb-pill t-noshow">No-show</span><span class="who">₱100 kept</span></div>
+</div>
+</body></html>
